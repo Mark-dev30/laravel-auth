@@ -4,7 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 //IMPORTIAMO IL CONTROLLER DashboardController
 use App\Http\Controllers\Admin\DashboardController as DashboardController;
-use App\Http\Controllers\ProjectController as ProjectController;
+use App\Http\Controllers\Admin\ProjectController as ProjectController;
 
 /*
 |--------------------------------------------------------------------------
