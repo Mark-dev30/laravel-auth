@@ -41,7 +41,7 @@
                                 <form action="{{ route('admin.projects.destroy', $project->slug)}}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-sm btn-danger">
+                                <button type="submit" class="btn btn-sm btn-danger confirm-delete-button">
                                     <i class="fa-solid fa-trash"></i>
                                 </button>
                                 </form>
@@ -55,5 +55,5 @@
         </div>
     </div>
 </div>
-
+@include("admin.projects.modal")
 @endsection
