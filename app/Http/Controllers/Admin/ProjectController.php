@@ -91,10 +91,9 @@ class ProjectController extends Controller
 
         $slug = Project::generateSlug($request->title, '-');
 
-
         $form['slug'] = $slug;
 
-        $project->update();
+        $project->update($form);
 
         return redirect()->route('admin.projects.index')->with('message', 'MODIFIED PROJECT');
     }
@@ -107,6 +106,7 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
-        //
+        $project->delete();
+        return redirect()->route('admin.projects.index')->with('message', 'PROJECT CANCELLED');
     }
 }
