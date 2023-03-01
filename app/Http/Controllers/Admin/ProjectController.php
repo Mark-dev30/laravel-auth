@@ -42,7 +42,7 @@ class ProjectController extends Controller
     public function store(StoreProjectRequest $request)
     {
         $form = $request->validated();
-        $slug = Project::generateSlug($request->title);
+        $slug = Project::generateSlug($request->title, '-');
 
 
         $form['slug'] = $slug;
@@ -87,7 +87,16 @@ class ProjectController extends Controller
      */
     public function update(UpdateProjectRequest $request, Project $project)
     {
-        //
+        $form = $request->validated();
+
+        $slug = Project::generateSlug($request->title, '-');
+
+
+        $form['slug'] = $slug;
+
+        $project->update();
+
+        return redirect()->route('admin.projects.index')->with('message', 'MODIFIED PROJECT');
     }
 
     /**
