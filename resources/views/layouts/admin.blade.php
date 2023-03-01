@@ -1,3 +1,4 @@
+{{-- STRUTTA PRINCIPALE DI ADMIN --}}
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -50,11 +51,13 @@
                         <ul class="nav flex-column">
                             <li class="nav-item">
                                 {{Route::currentRouteName()}}
+                                {{-- CREO UNA CONDIZIONE SE IL PERCORSO ATTUALE E UGUALE AD admin.dashboard AGGIUNGO LA CLASSE bg-secondary --}}
                                 <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.dashboard' ? 'bg-secondary' : '' }}" href="{{route('admin.dashboard')}}">
                                     <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> Dashboard
                                 </a>
                             </li>
                             <li class="nav-item">
+                                {{-- CREO UNA CONDIZIONE SE IL PERCORSO ATTUALE E UGUALE AD Aadmin.projects.index AGGIUNGO LA CLASSE bg-secondary --}}
                                 <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.projects.index' ? 'bg-secondary' : '' }}" href="{{route('admin.projects.index') }}">
                                     <i class="fa-solid fa-newspaper fa-lg fa-fw"></i> Posts
                                 </a>

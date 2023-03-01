@@ -1,3 +1,4 @@
+{{-- RIPRENDE LA STRUTTA DI APP.BLADE.PHP --}}
 @extends('layouts.app')
 @section('content')
 

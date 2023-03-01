@@ -24,8 +24,19 @@ class StoreProjectRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => ['required', 'max:50'],
+            'title' => ['required', 'unique:projects', 'max:50'],
             'content' => ['nullable']
+        ];
+    }
+
+
+    public function messages()
+    {
+        return [
+            'title.required' => 'Title must be entered',
+            'title.unique' => 'A project with this name already exists',
+            'title.max' => 'The title cannot exceed :max characters'
+
         ];
     }
 }

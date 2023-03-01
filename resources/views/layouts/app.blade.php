@@ -85,6 +85,7 @@
             </div>
         </nav>
         <main class="">
+            {{-- COLLEGATO CON WELCOME.BLADE.PHP--}}
             @yield('content')
         </main>
     </div>
